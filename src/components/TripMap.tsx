@@ -19,7 +19,7 @@ const path = tripStops.map(stop => stop.position);
 export default function TripMap() {
   return (
     <div className="w-full h-[600px] relative">
-      <LoadScript googleMapsApiKey="YOUR_API_KEY">
+      <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ""}>
         <GoogleMap
           mapContainerClassName="w-full h-full rounded-xl"
           center={center}
